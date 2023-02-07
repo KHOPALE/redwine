@@ -25,21 +25,21 @@ class Redwinequality():
         self.alcohol=alcohol 
 
     def __load_model(self): 
-        with open(r'artifacts/labelencoder_y.pkl','rb') as f:
+        with open(config.LABEL_MODEL_FILE_PATH,'rb') as f:
             self.model = pickle.load(f)
             
-        with open(r'artifacts/std_scaler.pkl','rb') as f:
+        with open(config.STD_MODEL_FILE_PATH,'rb') as f:
             self.model = pickle.load(f)
 
-        with open(r'artifacts/regression_model.pkl','rb') as f:
-            self.model = pickle.load(f)
-
-
-        with open(r'artifacts/knn_model.pkl','rb') as f:
+        with open(config.LOGISTIC_MODEL_FILE_PATH,'rb') as f:
             self.model = pickle.load(f)
 
 
-        with open(r'artifacts/project_data.json','r') as f:
+        with open(config.KNN_MODEL_FILE_PATH,'rb') as f:
+            self.model = pickle.load(f)
+
+
+        with open(config.JSON_FILE_PATH,'r') as f:
             self.project_data = json.load( f)
             # print("Project Data :",self.project_data)
              
