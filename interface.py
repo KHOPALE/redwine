@@ -58,9 +58,9 @@ def predict_quality():
             quality = wine_quality.get_predict_quality()
 
             if quality == 0:
-                return render_template('index.html',prediction = 'The quality of red wine is Bad')
+                return render_template('index.html',prediction = "The quality of red wine is Bad")
             elif quality == 1:  
-                return render_template('index.html',prediction = 'The quality of red wine is Good')
+                return render_template('index.html',prediction = "The quality of red wine is Good")
             # return  render_template("index.html" ,prediction=quality)
             
     except:
