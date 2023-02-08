@@ -64,9 +64,9 @@ class Redwinequality():
         # test_dataset = pd.DataFrame(scaler_test_array,columns=self.model.feature_names_in_)
 
 
-        predict_quality= np.around(self.model.predict(test_array)[0],3)
-        print("Predicted quality :", predict_quality)
-        return predict_quality
+        predict_quality_red= np.around(self.model.predict(test_array)[0],3)
+        print("Predicted quality :", predict_quality_red)
+        return predict_quality_red
 
 if __name__ == '__main__':
     cls = Redwinequality(1.2,12.23,12.32,23.11,65.1,67.6,12.43,45.98,12.89,76.90,23.6)
