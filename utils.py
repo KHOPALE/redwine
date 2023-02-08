@@ -25,8 +25,8 @@ class Redwinequality():
         self.alcohol=alcohol 
 
     def __load_model(self): 
-        with open(config.LABEL_MODEL_FILE_PATH,'rb') as f:
-            self.model = pickle.load(f)
+        # with open(config.LABEL_MODEL_FILE_PATH,'rb') as f:
+        #     self.model = pickle.load(f)
             
         with open(config.STD_MODEL_FILE_PATH,'rb') as f:
             self.model = pickle.load(f)
