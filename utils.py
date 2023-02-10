@@ -31,12 +31,12 @@ class Redwinequality():
         with open(config.STD_MODEL_FILE_PATH,'rb') as f:
             self.model = pickle.load(f)
 
-        with open(config.REGRESSION_MODEL_FILE_PATH,'rb') as f:
-            self.model1 = pickle.load(f)
+        # with open(config.REGRESSION_MODEL_FILE_PATH,'rb') as f:
+        #     self.model1 = pickle.load(f)
 
 
         with open(config.KNN_MODEL_FILE_PATH,'rb') as f:
-            self.model2 = pickle.load(f)
+            self.model = pickle.load(f)
 
 
         with open(config.JSON_FILE_PATH,'r') as f:
@@ -45,7 +45,7 @@ class Redwinequality():
              
     def get_predict_quality(self): # Public MethodJ
         self.__load_model()
-        test_array = np.zeros((1,self.model2.n_features_in_))
+        test_array = np.zeros((1,self.model.n_features_in_))
         
         test_array[0][0] = self.fixed_acidity
         test_array[0][1] = self.volatile_acidity
@@ -64,7 +64,7 @@ class Redwinequality():
         # test_dataset = pd.DataFrame(scaler_test_array,columns=self.model.feature_names_in_)
 
 
-        predict_quality= np.around(self.model2.predict(test_array)[0],3)
+        predict_quality= np.around(self.model.predict(test_array)[0],3)
         print("Predicted quality :", predict_quality)
         return predict_quality
 
